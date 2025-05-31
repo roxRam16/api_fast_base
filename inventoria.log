@@ -20,3 +20,5 @@
 [2025-05-31 13:08:44,029] INFO in router (startup_db:29): Info:200 - Conexión establecida con MongoDB Development
 [2025-05-31 13:08:48,217] INFO in router (collection_db:37): Info:200 - COLLECTION IDENTITY OK Development
 [2025-05-31 13:08:52,757] INFO in router (shutdown_db:45): Info:200 - Conexion cerrada con MongoDB Development
+[2025-05-31 13:32:30,557] INFO in router (home:20): Info:200 - app Home
+[2025-05-31 13:32:36,079] INFO in router (startup_db:29): Info:200 - Conexión establecida con MongoDB Development
