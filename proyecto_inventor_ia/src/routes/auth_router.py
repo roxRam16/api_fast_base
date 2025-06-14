@@ -1,52 +1,67 @@
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import APIRouter, FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
-from auth import create_access_token
-from crud import *
-from schemas import *
-from utils import get_current_user, require_permission
+from config import Settings
+from ..services.auth_service import create_access_token
+from ..models.identity import *
+from ..models.schemas import *
+from ..services.user_service import *
+from ..utils.auth_utils import *
 
-app = FastAPI()
 
-@app.post("/register", status_code=201)
-async def register(user: UserCreate):
-    if await get_user_by_email(user.email):
-        raise HTTPException(400, "Email already registered")
-    await create_user(user.dict())
-    return {"msg": "User created"}
+router = APIRouter(prefix="/inventoria/auth")
 
-@app.post("/login", response_model=Token)
+if Settings.APP_ENV == False:
+
+    entorno = "Production"
+
+else:
+
+    entorno = "Development"
+    
+
+@router.post("/login", response_model=Token, tags=["Auth"])
 async def login(form: OAuth2PasswordRequestForm = Depends()):
+
     user = await authenticate_user(form.username, form.password)
+
     if not user:
-        raise HTTPException(401, "Invalid credentials")
+
+        logger.info(f"Info:401 - INVALID CREDENTIALS")
+        return ApiResponse.bad_request(f"🛑 Info:401 - INVALID CREDENTIALS")
+    
     token = create_access_token(data={"sub": user["email"]})
+
     return {"access_token": token, "token_type": "bearer"}
 
-@app.post("/roles")
-async def create_role_endpoint(role: RoleCreate, user=Depends(require_permission("manage_roles"))):
-    await create_role(role.dict())
-    return {"msg": "Role created"}
 
-@app.get("/roles")
-async def list_roles_endpoint(user=Depends(require_permission("view_roles"))):
-    roles = await list_roles()
-    return roles
-
-@app.get("/me", response_model=UserOut)
+@router.get("/me", response_model=UserOut, tags=["Auth"])
 async def read_users_me(current_user=Depends(get_current_user)):
     return {"email": current_user["email"], "role": current_user.get("role")}
 
-@app.post("/forgot-password")
+
+@router.post("/forgot-password", tags=["Auth"])
 async def forgot_password(req: ResetRequest):
+
     user = await get_user_by_email(req.email)
+
     if not user:
-        raise HTTPException(404, "User not found")
+
+        logger.info(f"Info:404 - USER NOT FOUND")
+        return ApiResponse.bad_request(f"🛑 404 - USER NOT FOUND")
+   
     token = await set_reset_token(req.email)
+
+    #implementar para instrucciones al correo
     print(f"🔐 Token de recuperación: {token}")
     return {"msg": "Check your email for password reset instructions (simulated)."}
 
-@app.post("/reset-password")
+
+@router.post("/reset-password", tags=["Auth"])
 async def reset_password_endpoint(req: ResetPassword):
+
     if await reset_password(req.token, req.new_password):
-        return {"msg": "Password reset successful"}
+        logger.info(f"Info:201 - CONTRASEÑA RESTAURADA OK")
+        return ApiResponse.success(f"🟢 Info:201 - CONTRASEÑA RESTAURADA OK")
+    
+    logger.info(f"Info:400 - EMAIL ALREADY REGISTERED")
     raise HTTPException(400, "Invalid token")

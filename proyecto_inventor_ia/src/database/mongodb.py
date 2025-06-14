@@ -9,9 +9,7 @@ class MongoDB:
     def get_client(cls) -> AsyncIOMotorClient:
         if cls._client is None:
             cls._client = AsyncIOMotorClient(
-                settings.MONGODB_URI,
-                server_api=ServerApi("1")
-            )
+                settings.MONGODB_URI, server_api=ServerApi('1'))
         return cls._client
 
     @classmethod
@@ -34,7 +32,7 @@ class MongoDB:
     def get_collection_logs(cls):
         return cls.get_database()[settings.MONGODB_COLLECTION_LOGS]
 
-    @classmethod
-    def close_client(cls):
-        if cls._client:
-            cls._client.close()
+    # @classmethod
+    # def close_client(cls):
+    #     if cls._client:
+    #         cls._client.close()

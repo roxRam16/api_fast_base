@@ -71,3 +71,25 @@ mongo_handler.setLevel(logging.INFO)
 logger.addHandler(mongo_handler)
 
 
+#Documentación - códigos de status - apis
+
+# Código	Nombre	¿Cuándo usarlo?
+# 200	OK	✅ Petición exitosa. Por ejemplo, login exitoso o recurso obtenido.
+# 201	Created	✅ Cuando se crea un nuevo recurso. Ej: registro de usuario exitoso.
+# 204	No Content	✅ Acción exitosa, pero sin contenido que retornar. Ej: borrado exitoso.
+# 400	Bad Request	❌ La petición es inválida. Ej: no se envió la contraseña, faltan campos.
+# 401	Unauthorized	❌ No autenticado. Ej: token JWT ausente o inválido.
+# 403	Forbidden	❌ Autenticado, pero sin permisos. Ej: usuario sin rol suficiente.
+# 404	Not Found	❌ El recurso no existe. Ej: email no registrado.
+# 409	Conflict	❌ Conflicto con estado actual. Ej: email ya registrado.
+# 422	Unprocessable Entity	❌ Datos bien formateados pero inválidos. Ej: email mal formado. (FastAPI lo usa por defecto para validaciones con Pydantic)
+# 500	Internal Server Error	❌ Error inesperado en el servidor. Ej: falla al conectar con MongoDB.
+
+
+# Resumen
+# Situación	Código sugerido
+# Falta un campo requerido	400
+# Formato inválido de un campo	422
+# Email ya existe en la base	409 ✅
+# Login sin token	401
+# Usuario sin permiso	403

@@ -22,21 +22,25 @@ async def home():
     return ApiResponse.success(f"🚀 app Home")
 
 
-# # 🟢 Eventos de arranque y apagado
-# @router.get("/startup", tags=["DescripcionAPI"], summary="Prueba de conexión open")
-# async def startup_db():
-#     MongoDB.get_client()
-#     logger.info(f"Info:200 - Conexión establecida con MongoDB {entorno}")
-#     print(f"🚀 Conexion establecida con MongoDB {entorno}")
-#     return ApiResponse.success(f"🚀 Conexión open ok {entorno}")
+# 🟢 Eventos de arranque y apagado
+@router.get("/startup", tags=["DescripcionAPI"], summary="Prueba de conexión open")
+async def startup_db():
+    MongoDB.get_client()
+    logger.info(f"Info:200 - Conexión establecida con MongoDB {entorno}")
+    print(f"🚀 Conexion establecida con MongoDB {entorno}")
+    return ApiResponse.success(f"🚀 Conexión open ok {entorno}")
 
 
-# @router.get("/collection", tags=["DescripcionAPI"], summary="Prueba de conexión collection")
-# async def collection_db():
-#     MongoDB.get_collection_identity()
-#     logger.info(f"Info:200 - COLLECTION IDENTITY OK {entorno}")
-#     print(f"🚀 Collection identity {entorno}")
-#     return ApiResponse.success(f"🚀 COLLECTION ok {entorno}")
+@router.get("/collection", tags=["DescripcionAPI"], summary="Prueba de conexión collection")
+async def collection_db():
+    collection = MongoDB.get_collection_identity()
+    result = collection.insert_one({"PRUEBA DE INSERCIÓN":"200"})
+    if result:
+        logger.info(f"Info:200 - COLLECTION IDENTITY OK")
+        return ApiResponse.success(f"🚀 COLLECTION ok {entorno}")
+    # logger.info(f"Info:200 - COLLECTION IDENTITY OK {entorno}")
+    # print(f"🚀 Collection identity {entorno}")
+  
 
 
 # @router.get("/shutdown", tags=["DescripcionAPI"], summary="Prueba de conexión close")

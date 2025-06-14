@@ -22,6 +22,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from config import Settings # nuestro settings.py con la variable APP_ENV
 from src.routes.router import router as app_router
+from src.routes.auth_router import router as app_auth
+from src.routes.user_router import router as app_identity
 
 
 # Define configuración común
@@ -66,6 +68,8 @@ app.add_middleware(
 
 # 🔌 Routers (define tus rutas en main.py y otros módulos)
 app.include_router(app_router)
+app.include_router(app_auth)
+app.include_router(app_identity)
 
 @app.get("/inventoria", tags=["DescripcionAPI"], summary="Versión del sistema")
 async def version():

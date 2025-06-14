@@ -22,3 +22,20 @@
 [2025-05-31 13:08:52,757] INFO in router (shutdown_db:45): Info:200 - Conexion cerrada con MongoDB Development
 [2025-05-31 13:32:30,557] INFO in router (home:20): Info:200 - app Home
 [2025-05-31 13:32:36,079] INFO in router (startup_db:29): Info:200 - Conexión establecida con MongoDB Development
+[2025-06-14 12:26:27,993] INFO in router (startup_db:29): Info:200 - Conexión establecida con MongoDB Development
+[2025-06-14 12:26:34,761] INFO in router (collection_db:37): Info:200 - COLLECTION IDENTITY OK Development
+[2025-06-14 12:30:33,327] INFO in router (collection_db:38): Info:200 - COLLECTION IDENTITY OK Development
+[2025-06-14 12:32:12,534] INFO in router (collection_db:38): <Future pending cb=[_chain_future.<locals>._call_check_cancel() at C:\Users\rosariorr\AppData\Local\Programs\Python\Python312\Lib\asyncio\futures.py:387]>
+[2025-06-14 12:33:45,574] INFO in router (collection_db:38): <Future pending cb=[_chain_future.<locals>._call_check_cancel() at C:\Users\rosariorr\AppData\Local\Programs\Python\Python312\Lib\asyncio\futures.py:387]>
+[2025-06-14 12:39:34,257] INFO in router (collection_db:38): <Future pending cb=[_chain_future.<locals>._call_check_cancel() at C:\Users\rosariorr\AppData\Local\Programs\Python\Python312\Lib\asyncio\futures.py:387]>
+[2025-06-14 12:40:01,160] INFO in router (startup_db:29): Info:200 - Conexión establecida con MongoDB Development
+[2025-06-14 12:41:16,063] INFO in router (startup_db:29): Info:200 - Conexión establecida con MongoDB Development
+[2025-06-14 12:41:43,402] INFO in router (collection_db:38): <Future pending cb=[_chain_future.<locals>._call_check_cancel() at C:\Users\rosariorr\AppData\Local\Programs\Python\Python312\Lib\asyncio\futures.py:387]>
+[2025-06-14 12:44:30,560] INFO in router (collection_db:39): Info:200 - COLLECTION IDENTITY OK
+[2025-06-14 12:50:21,009] INFO in user_service (create_user:29): Info:200 - USER CREATED OK
+[2025-06-14 12:56:47,723] INFO in user_router (register:29): Info:400 - EMAIL ALREADY REGISTERED
+[2025-06-14 12:59:08,566] INFO in user_service (create_user:38): Info:402 - USER CREATED BAD: Password is required
+[2025-06-14 13:05:37,173] INFO in user_service (create_user:29): Info:201 - USER CREATED OK
+[2025-06-14 14:37:52,671] INFO in router (home:20): Info:200 - app Home
+[2025-06-14 15:02:58,437] INFO in user_service (list_roles:82): Info:402 - ROLES NOT FOUND: '_asyncio.Future' object is not subscriptable
+[2025-06-14 15:04:35,008] INFO in user_service (list_roles:82): Info:402 - ROLES NOT FOUND: '_asyncio.Future' object is not subscriptable
