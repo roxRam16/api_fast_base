@@ -1,0 +1,633 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Relaway', sans-serif;
+    /* background: linear-gradient(to left bottom,  #a700ff, #4058d1,  #0b8793); */
+    background: linear-gradient(to bottom right, #321761, #641d70, #79145c);
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+    border-radius: 20px 20px;
+    border:1px solid red;
+    background: url("../img/login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+ .container {
+      width: 900px;
+      height: 550px;
+      display: flex;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    }
+
+        /* .left, .right {
+      padding: 40px;
+    } */
+
+    /* .left {
+      width: 40%;
+      background: url('../img/login.png');
+      background-size: cover;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #79145c;
+    }
+
+    .left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:rgba(66, 90, 209, 0.5); 
+      backdrop-filter: blur(5px);
+      z-index: 0;
+    }
+
+    .left > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .left h2 {
+      margin-top: 20px;
+    }
+
+    .left p {
+      font-size: 0.9em;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+
+    /* .left, .right {
+      padding: 40px;
+    }
+
+    .left {
+      width: 60%;
+      background: linear-gradient(to top left, #2b4ea2, #4058d1), url('../img/login.png');
+      background-size: cover;
+      background-blend-mode: overlay;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+    }
+
+    .left h2 {
+      margin-top: 20px;
+    }
+
+    .left p {
+      font-size: 0.9em;
+      text-align: center;
+      margin: 20px 0;
+    } */
+
+    /* .btns {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .btns button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-register {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-login {
+      background: linear-gradient(to right bottom,#d94fcf, #2b4ea2);
+      color: white;
+    }
+
+    .social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social div {
+      width: 30px;
+      height: 30px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .right {
+      width: 60%;
+      background: #f2f6fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .right h3 {
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 0.9em;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 30px;
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      margin-left: 10px;
+      width: 100%;
+      background: transparent;
+      font-size: 0.9em;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 0.8em;
+      margin: 10px 0;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    .signup-btn {
+       background: linear-gradient(to right bottom,#d94fcf, #2b4ea2);
+      border: none;
+      padding: 12px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .signin-link {
+      margin-top: 15px;
+      font-size: 0.85em;
+    }
+
+    .signin-link a {
+      color: #7c41c6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-container label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #ccc;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-container input:focus + label,
+.input-container input:valid + label {
+    top: -0.6rem;
+    left: 0.8rem;
+    font-size: 0.75rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 0.3rem;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.1);
+} */ 
+
+  /* .left, .right {
+      padding: 40px;
+    }
+
+    .left {
+      width: 40%;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=700&q=60') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(50, 23, 97, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 0;
+    }
+
+    .left > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .left h2 {
+      margin-top: 20px;
+    }
+
+    .left p {
+      font-size: 0.9em;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .btns button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-register {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-login {
+      background: linear-gradient(to right, #9c27b0, #79145c);
+      color: white;
+    }
+
+    .social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social div {
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .right {
+      width: 60%;
+      background: rgba(242, 246, 250, 0.8);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .right h3 {
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 0.9em;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 15px 14px 15px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      background: white;
+      font-size: 0.9em;
+      outline: none;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      color: #888;
+      padding: 0 5px;
+      font-size: 0.85em;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: 0;
+      transform: translateY(-50%) scale(0.85);
+      color: #7c41c6;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 0.8em;
+      margin: 10px 0;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    .signup-btn {
+      background: linear-gradient(to right, #9c27b0, #641d70);
+      border: none;
+      padding: 12px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .signin-link {
+      margin-top: 15px;
+      font-size: 0.85em;
+    }
+
+    .signin-link a {
+      color: #7c41c6;
+      text-decoration: none;
+      font-weight: bold;
+    } */
+
+
+
+    .left, .right {
+      padding: 80px;
+    }
+
+    .left {
+      width: 60%;
+      background: url("../img/login.jpg");
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(50, 23, 97, 0.5);
+      backdrop-filter: blur(8px);
+      z-index: 0;
+    }
+
+    .left > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .left h2 {
+      margin-top: 20px;
+    }
+
+    .left p {
+      font-size: 0.9em;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .btns button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-register {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-login {
+      background: linear-gradient(to right, #9c27b0, #79145c);
+      color: white;
+    }
+
+    .social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social div {
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .right {
+      width: 40%;
+      background: rgba(255, 255, 255, 0.55);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .right h3 {
+      margin-bottom: 25px;
+    }
+
+    .right p {
+      font-size: 0.9em;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 15px 14px 15px;
+      border: 1px solid #321761;
+      border-radius: 30px;
+      background: white;
+      font-size: 0.9em;
+      outline: none;
+      color: #424242;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: none;
+      color: #888;
+      padding: 0 5px;
+      font-size: 0.85em;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: 0;
+      transform: translateY(-130%) scale(0.85);
+      color: #321761;
+      background: none;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 0.8em;
+      margin: 10px 0;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    .signup-btn {
+      background: linear-gradient(to top left, #641d70,  #321761);
+      border: none;
+      padding: 12px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+      .signup-btn:hover{
+        opacity:0.8;
+      }
+
+    .signin-link {
+      margin-top: 15px;
+      font-size: 0.85em;
+    }
+
+    .signin-link a {
+      color: #7c41c6;
+      text-decoration: none;
+      font-weight: bold;
+    }
